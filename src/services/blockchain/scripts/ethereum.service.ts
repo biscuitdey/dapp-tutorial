@@ -1,8 +1,5 @@
 import { ethers } from 'hardhat';
 import { readFile, writeFile } from 'fs/promises';
-import { Injectable } from '@nestjs/common';
-
-@Injectable()
 export class EthereumService {
   async deployContract(): Promise<void> {
     const nameContract = await ethers.getContractFactory('Name');
@@ -15,16 +12,17 @@ export class EthereumService {
     return await ethers.getContractAt('Name', nameContractAddress);
   }
 
-  async storeName(name: string): Promise<void> {
+  async setName(name: string): Promise<void> {
     const nameContract = await this.connectToContract();
-    await nameContract.setName(name);
+
+    //convert string to bytes32 for storing in contract
+    await nameContract.setName(ethers.utils.formatBytes32String(name));
   }
 
   async getName(): Promise<string> {
     const nameContract = await this.connectToContract();
     const name = await nameContract.getName();
-    console.log(name);
-    return name;
+    return ethers.utils.parseBytes32String(name);
   }
 
   private async getDeployedContractAddress(): Promise<string> {

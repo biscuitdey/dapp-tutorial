@@ -4,11 +4,15 @@ import '@nomicfoundation/hardhat-toolbox';
 import 'dotenv/config';
 
 const config: HardhatUserConfig = {
-  defaultNetwork: 'goerli',
+  defaultNetwork: 'ganache',
   networks: {
     goerli: {
       url: `${process.env.ALCHEMY_URL}`,
       accounts: [`0x${process.env.GOERLI_PRIVATE_KEY}`],
+    },
+    ganache: {
+      url: 'HTTP://127.0.0.1:7545',
+      accounts: [`0x${process.env.GANACHE_PRIVATE_KEY}`],
     },
   },
   solidity: {
