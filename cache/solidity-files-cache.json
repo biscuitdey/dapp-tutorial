@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/biswashreedey/IdeaProjects/hardhat-tutorial/dapp-tutorial/src/services/blockchain/contracts/Name.sol": {
+      "lastModificationDate": 1678351426807,
+      "contentHash": "6048555ca1e1548d50560b13a7767677",
+      "sourceName": "src/services/blockchain/contracts/Name.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.17"
+      ],
+      "artifacts": [
+        "Name"
+      ]
+    }
+  }
+}
